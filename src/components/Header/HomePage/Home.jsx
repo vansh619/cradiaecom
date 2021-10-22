@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Home.css";
 import "../../ProductCard/ProductCard.css";
+import { Link } from "react-router-dom";
 // import ProductCard from "../../ProductCard/ProductCard";
 
 const Home = () => {
@@ -30,12 +31,54 @@ const Home = () => {
           <h1>{itemName}</h1>
           <p>Descriptions</p>
         </div>
-        <p className="price">
-          Rs.<span>{price}</span>
-        </p>
-
-        <button onClick={addItem}>Add to Cart</button>
+        <div>
+          <p className="price">
+            Rs.<span>{price}</span>
+          </p>
+          <button onClick={addItem}>Add to Cart</button>
+        </div>
       </div>
+    );
+  };
+
+  const Cart = () => {
+    return (
+      <>
+        <section className="selectedBag">
+          <div className="top-bagSide top-titles">
+            <div>Bag</div>
+            <button className="btn" onClick={removeAll}>
+              Clear Bag
+            </button>
+          </div>
+
+          <div className="cartItems">
+            <div className="cartTop">
+              <p>Total Items</p>
+              <p>Total Price {add}</p>
+            </div>
+            <div className="deliveryCharge">
+              <p>Delivery Charges</p> <span>Free</span>
+            </div>
+            <div className="cartMiddle">
+              <div>
+                <p>Grand Total</p>
+                <p>Inclusive of all taxes</p>
+              </div>
+              <div>{add}</div>
+            </div>
+
+            <div className="deliverytime">
+              <p>
+                delivery time: <span>4-24 hour</span>
+              </p>
+            </div>
+            <Link to="/shipping">
+              <button className="proceedbtn">Proceed to Buy</button>
+            </Link>
+          </div>
+        </section>
+      </>
     );
   };
 
@@ -57,19 +100,7 @@ const Home = () => {
             <ProductCard />
           </div>
         </section>
-
-        <section className="selectedBag">
-          <div className="top-bagSide top-titles">
-            <div>Bag</div>
-            <button className="btn" onClick={removeAll}>
-              Clear Bag
-            </button>
-          </div>
-          <div className="cartItems">
-            <div className="itemName">{itemName}</div>
-            <div className="itemPrice">Total Price {add}</div>
-          </div>
-        </section>
+        <Cart />
       </div>
     </>
   );
