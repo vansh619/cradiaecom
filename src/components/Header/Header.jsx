@@ -1,6 +1,7 @@
 import React from "react";
 import "./Header.css";
-import { BsSearch, BsList, BsHandbagFill } from "react-icons/bs";
+import { BsSearch, BsList } from "react-icons/bs";
+import { HiShoppingBag } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
 
@@ -33,7 +34,7 @@ function Header() {
 
         <div className="product-right">
           <Link to="/cart">
-            <BsHandbagFill className="icon" />
+            <HiShoppingBag className="icon" />
           </Link>
         </div>
       </nav>
