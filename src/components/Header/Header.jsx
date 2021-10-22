@@ -1,45 +1,38 @@
 import React from "react";
 import "./Header.css";
-import { BsSearch } from 'react-icons/bs';
-import {AiOutlineShoppingCart} from "react-icons/ai"
+import { BsSearch } from "react-icons/bs";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
-
-function Header() {  
+function Header() {
   return (
-    <div className="header">
-        <Link to="/">
-        <img
-          className="headerLogo"
-          src="./slogo.png"
-          alt="Logo"
-        />
-        </Link>
-      
-
-      <div className="headerSearch">
-        <input className="headerSearchInput" type="text" />
-        <BsSearch className="headerSearchIcon" />
-      </div>
-
-      <div className="headerNav">
-         <Link to="/cart">
-          <div className="headerBasket">
-          <span className="headerOptionTag">Cart</span>
-            <AiOutlineShoppingCart />
-            <span className="headerBasketCount">
-              0
-            </span>
-          </div>
+    <>
+      <nav className="header">
+        <div className="logo">
+          <Link to="/">
+            <div className="logo-name">MARK</div>
           </Link>
-        
-      </div>
-    </div>
+        </div>
+        <div className="search-bar">
+          <input
+            className="input"
+            type="search"
+            name="search Items"
+            id="search"
+            placeholder="search for products"
+          />
+          <div className="search-icon">
+            <BsSearch />
+          </div>
+        </div>
+        <div className="product-right">
+          <Link to="/cart">
+            <AiOutlineShoppingCart className="icon" />
+          </Link>
+        </div>
+      </nav>
+    </>
   );
 }
 
 export default Header;
-
-
-
-
