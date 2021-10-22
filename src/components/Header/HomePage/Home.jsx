@@ -3,20 +3,34 @@ import "./Home.css";
 import "../../ProductCard/ProductCard.css";
 import { Link } from "react-router-dom";
 import { BsList } from "react-icons/bs";
+import { BiMinus, BiPlus } from "react-icons/bi";
 // import ProductCard from "../../ProductCard/ProductCard";
 
 const Home = () => {
   let price = 150;
   let itemName = "Item Name";
   const [add, setAdd] = useState(price);
+  const [incm, setIncm] = useState(0);
 
   const addItem = () => {
     setAdd(add + price);
+    setIncm(incm + 1);
     console.log(add);
   };
   const removeAll = () => {
-    if (add > !1) {
+    if (add > 1) {
       setAdd(0);
+      setIncm(0);
+    }
+  };
+  const incmItem = () => {
+    if (add > 1) {
+      setIncm(incm + 1);
+    }
+  };
+  const decmItem = () => {
+    if (add > 1) {
+      setIncm(incm - 1);
     }
   };
 
@@ -55,8 +69,12 @@ const Home = () => {
 
           <div className="cartItems">
             <div className="cartTop">
-              <p>Total Items</p>
-              <p>Total Price {add}</p>
+              <div className="addRemoveItems">
+                <BiPlus onClick={incmItem} />
+                <p>Total Items {incm}</p>
+                <BiMinus onClick={decmItem} />
+              </div>
+              <p>Total Price {add * incm}</p>
             </div>
             <div className="deliveryCharge">
               <p>Delivery Charges</p> <span>Free</span>
