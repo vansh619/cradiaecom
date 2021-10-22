@@ -14,12 +14,6 @@ const Cart = () => {
       <div className="checkoutRight">
         <h2>The amount is</h2>
 
-        {/* Cart Item */}
-        {/* Cart Item */}
-        {/* Cart Item */}
-        {/* Cart Item */}
-        {/* Cart Item */}
-
         <Link to="/shipping">
           <button className="shipButton">Ship to</button>
         </Link>

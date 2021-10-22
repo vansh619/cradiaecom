@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Home.css";
 import "../../ProductCard/ProductCard.css";
 import { Link } from "react-router-dom";
+import { BsList } from "react-icons/bs";
 // import ProductCard from "../../ProductCard/ProductCard";
 
 const Home = () => {
@@ -21,7 +22,7 @@ const Home = () => {
 
   const ProductCard = () => {
     return (
-      <div class="card">
+      <div className="card">
         <img
           src="https://images.unsplash.com/photo-1573246123716-6b1782bfc499?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8ZnJ1aXRzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
           alt="ProductImage"
@@ -86,9 +87,10 @@ const Home = () => {
     <>
       <div className="home">
         <section className="leftSidebar">
-          <div className="catogory top-titles">Products</div>
+          <div className="leftTop">
+            <BsList className="leftHumburg" />
+          </div>
         </section>
-
         <section className="centerProduct">
           <div className="top-titles">All Products</div>
           <div className="products">

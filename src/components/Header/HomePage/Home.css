@@ -16,7 +16,7 @@
   margin: 0 10px;
 }
 .centerProduct {
-  width: 60%;
+  width: 70%;
   overflow-y: scroll;
   margin-bottom: 1.5rem;
 }
@@ -24,9 +24,7 @@
   width: 5px;
   color: #ffd960;
 }
-.leftSidebar {
-  width: 25%;
-}
+
 .selectedBag {
   width: 25%;
 }
@@ -43,6 +41,9 @@
 .leftSidebar {
   border-right: 1px solid #ebe9ff;
   height: 100%;
+  margin: 0 1rem;
+  display: flex;
+  align-items: flex-start;
 }
 .selectedBag {
   border-left: 1px solid #ebe9ff;
@@ -130,8 +131,30 @@
 .deliveryCharge span {
   color: #00a128;
 }
+
+.leftSidebarActive {
+  left: 100px;
+}
+@media screen and (min-width: 998px) {
+  .products {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 @media screen and (max-width: 998px) {
   .products {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 600px) {
+  .rightHumburg {
+    display: none;
+  }
+}
+@media screen and (max-width: 450px) {
+  .centerProduct {
+    width: 100%;
+  }
+  .card button {
+    font-size: 0.8em;
   }
 }

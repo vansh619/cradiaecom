@@ -77,12 +77,27 @@
     display: none;
   }
   .card button {
-    top: 15px;
+    top: 20px;
     left: -10px;
     width: 100%;
+    font-size: 1em;
+    height: 45px;
   }
   .card {
     max-width: 100%;
     display: flex;
+  }
+  .card div h1 {
+    font-size: 1.2em;
+  }
+  .card div .price {
+    font-size: 1.5em;
+  }
+}
+@media screen and (max-width: 450px) {
+  .card button {
+    font-size: 0.8em;
+    height: 40px;
+    top: 25px;
   }
 }
