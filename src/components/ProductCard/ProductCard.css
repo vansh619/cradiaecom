@@ -1,28 +1,88 @@
 .card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 300px;
-    margin: auto;
-    text-align: center;
-    font-family: arial;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 250px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+  margin-top: 1em;
+  border-radius: 8px;
+}
+.productImage {
+  height: 50%;
+  width: 50%;
+  border-radius: 8px;
+}
+.card .productImage,
+.card h1,
+.card p {
+  margin: 0.6em;
+}
+.price {
+  color: grey;
+  font-size: 22px;
+}
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  cursor: pointer;
+  color: #ffffff;
+  background: #ffd960;
+  text-align: center;
+  width: 95%;
+  font-size: 18px;
+  border-radius: 8px;
+  transition: 1s;
+  margin: 5px;
+}
+
+.card button:hover {
+  background: #00a128;
+  transition: 1s;
+}
+@media screen and (max-width: 998px) {
+  .card {
+    max-width: 95%;
+    display: flex;
   }
-  
-  .price {
-    color: grey;
-    font-size: 22px;
+  .products {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
-  
+  .productImage {
+    height: 110px;
+    width: 110px;
+    border-radius: 8px;
+  }
   .card button {
-    border: none;
-    outline: 0;
-    padding: 12px;
-    color: white;
-    background-color: #000;
-    text-align: center;
-    cursor: pointer;
+    position: relative;
+    top: 15px;
+    left: 0;
+    height: 50px;
+    width: 200px;
+    padding: 15px;
+  }
+  .selectedBag {
+    width: 36%;
+  }
+  .leftSidebar {
+    position: absolute;
+    left: -100%;
+  }
+}
+@media screen and (max-width: 798px) {
+  .selectedBag {
+    display: none;
+  }
+  .card button {
+    top: 15px;
+    left: -10px;
     width: 100%;
-    font-size: 18px;
   }
-  
-  .card button:hover {
-    opacity: 0.7;
+  .card {
+    max-width: 100%;
+    display: flex;
   }
+}

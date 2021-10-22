@@ -1,7 +1,137 @@
-.homeImage{
-    width: 100%;
-    z-index: -1;
-    margin-bottom: -150px;
-    mask-image: linear-gradient(to bottom, rgba(0,0,0,1),rgba(0,0,0,0));
-    height: 10%
+.home {
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100vh;
+  justify-content: space-around;
+  margin-top: 1.5rem;
+}
+.products {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  margin: 0 10px;
+}
+.centerProduct {
+  width: 60%;
+  overflow-y: scroll;
+  margin-bottom: 1.5rem;
+}
+::-webkit-scrollbar {
+  width: 5px;
+  color: #ffd960;
+}
+.leftSidebar {
+  width: 25%;
+}
+.selectedBag {
+  width: 25%;
+}
+.top-bagSide {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.top-titles {
+  font-size: 1.2em;
+  font-weight: 500;
+  margin: 0.8em;
+}
+.leftSidebar {
+  border-right: 1px solid #ebe9ff;
+  height: 100%;
+}
+.selectedBag {
+  border-left: 1px solid #ebe9ff;
+  height: 100%;
+}
+.top-bagSide .btn {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  cursor: pointer;
+  color: #ffffff;
+  background: #ffd960;
+  text-align: center;
+  font-size: 18px;
+  border-radius: 8px;
+  transition: 1s;
+}
+.top-bagSide .btn:hover {
+  background: red;
+  transition: 1s;
+}
+.cartItems {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 250px;
+  width: 90%;
+  padding: 6px;
+  margin: auto;
+  height: 300px;
+  text-align: center;
+  font-family: arial;
+  margin-top: 1em;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.proceedbtn {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  cursor: pointer;
+  color: #ffffff;
+  background: #ffd960;
+  text-align: center;
+  width: 95%;
+  font-size: 18px;
+  border-radius: 8px;
+  transition: 1s;
+  margin: 5px;
+}
+.proceedbtn:hover {
+  background: #00a128;
+  transition: 1s;
+}
+.cartTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0.5em 0;
+  width: 100%;
+  font-size: 1em;
+  font-weight: 700;
+  height: 40px;
+  border-bottom: 1px solid #ebe9ff;
+}
+.cartMiddle {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 2px dashed #ebe9ff;
+  border-top: 2px dashed #ebe9ff;
+  font-size: 1em;
+  margin: 0.5em 0;
+  font-weight: 600;
+  height: 65px;
+}
+.deliveryCharge {
+  font-size: 1em;
+  margin: 0.5em 0;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.deliveryCharge span {
+  color: #00a128;
+}
+@media screen and (max-width: 998px) {
+  .products {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
