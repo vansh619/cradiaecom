@@ -29,14 +29,44 @@
   color: #ffffff;
   background: #ffd960;
   text-align: center;
-  width: 100%;
+  width: 95%;
   font-size: 18px;
   border-radius: 8px;
   transition: 1s;
+  margin: 5px;
 }
 
 .card button:hover {
-  opacity: 0.7;
   background: #00a128;
   transition: 1s;
+}
+@media screen and (max-width: 998px) {
+  .card {
+    max-width: 95%;
+    display: flex;
+  }
+  .products {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .productImage {
+    height: 110px;
+    width: 110px;
+    border-radius: 8px;
+  }
+  .card button {
+    position: relative;
+    top: 65px;
+    left: 0;
+    height: 50px;
+    width: 200px;
+    padding: 15px;
+  }
+  .card .price {
+    position: relative;
+    right: -160px;
+    top: 0;
+  }
 }

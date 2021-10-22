@@ -5,7 +5,7 @@ import "../../ProductCard/ProductCard.css";
 
 const Home = () => {
   let price = 150;
-  let itemName = "Allu lelo";
+  let itemName = "Item Name";
   const [add, setAdd] = useState(price);
 
   const addItem = () => {
@@ -26,14 +26,15 @@ const Home = () => {
           alt="ProductImage"
           className="productImage"
         />
-        <h1>{itemName}</h1>
+        <div>
+          <h1>{itemName}</h1>
+          <p>Descriptions</p>
+        </div>
         <p className="price">
           Rs.<span>{price}</span>
         </p>
-        <p>150 Rupey me dega</p>
-        <p>
-          <button onClick={addItem}>Add to Cart</button>
-        </p>
+
+        <button onClick={addItem}>Add to Cart</button>
       </div>
     );
   };
@@ -66,7 +67,7 @@ const Home = () => {
           </div>
           <div className="cartItems">
             <div className="itemName">{itemName}</div>
-            <div className="itemPrice">{add}</div>
+            <div className="itemPrice">Total Price {add}</div>
           </div>
         </section>
       </div>
