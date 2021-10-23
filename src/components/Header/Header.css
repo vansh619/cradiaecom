@@ -23,12 +23,7 @@
   font-size: 2rem;
   margin: 0 0.5em;
 }
-.leftTop {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 0 0.6rem;
-}
+
 .search-bar {
   display: flex;
   align-items: center;

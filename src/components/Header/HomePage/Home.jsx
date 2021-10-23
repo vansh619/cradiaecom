@@ -50,6 +50,11 @@ const Home = () => {
           <p className="price">
             Rs.<span>{price}</span>
           </p>
+          {/* <div className="opretors">
+            <BiMinus onClick={decmItem} />
+            {incm}
+            <BiPlus onClick={incmItem} />
+          </div> */}
           <button onClick={addItem}>Add to Cart</button>
         </div>
       </div>
@@ -70,9 +75,12 @@ const Home = () => {
           <div className="cartItems">
             <div className="cartTop">
               <div className="addRemoveItems">
-                <BiPlus onClick={incmItem} />
-                <p>Total Items {incm}</p>
-                <BiMinus onClick={decmItem} />
+                <p>Total Items</p>
+                <div className="opretors">
+                  <BiMinus onClick={decmItem} />
+                  {incm}
+                  <BiPlus onClick={incmItem} />
+                </div>
               </div>
               <p>Total Price {add * incm}</p>
             </div>
@@ -84,7 +92,7 @@ const Home = () => {
                 <p>Grand Total</p>
                 <p>Inclusive of all taxes</p>
               </div>
-              <div>{add}</div>
+              <div>{add * incm}</div>
             </div>
 
             <div className="deliverytime">
@@ -112,6 +120,24 @@ const Home = () => {
         <section className="centerProduct">
           <div className="top-titles">All Products</div>
           <div className="products">
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
             <ProductCard />
             <ProductCard />
             <ProductCard />
