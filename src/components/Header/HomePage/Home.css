@@ -39,10 +39,8 @@
   margin: 0.8em;
 }
 .leftSidebar {
-  /* border-right: 1px solid #ebe9ff; */
+  border-right: 1px solid #ebe9ff;
   height: 100%;
-  width: 50px;
-  margin: 0 1rem;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -51,7 +49,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 0 0.6rem;
+  cursor: pointer;
 }
 .selectedBag {
   border-left: 1px solid #ebe9ff;
@@ -158,10 +156,6 @@
 .deliveryCharge span {
   color: #00a128;
 }
-
-.leftSidebarActive {
-  left: 100px;
-}
 @media screen and (min-width: 998px) {
   .products {
     grid-template-columns: repeat(3, 1fr);
@@ -172,8 +166,32 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
-@media screen and (min-width: 600px) {
-  .rightHumburg {
+@media screen and (max-width: 700px) {
+  .selectedBag {
+    position: absolute;
+    top: -425px;
+    right: 0;
+    border-left: none;
+    width: 60% !important;
+    background: #ebe9ff;
+    height: 425px;
+    transition: 0.2s;
+    border-radius: 8px;
+  }
+  .selectedBagActive {
+    top: 80px;
+  }
+  .product-right {
+    display: none;
+  }
+  .bag-icon {
+    position: absolute;
+    top: 15px;
+    right: 5px;
+  }
+}
+@media screen and (min-width: 701px) {
+  .bag-icon {
     display: none;
   }
 }
@@ -183,5 +201,8 @@
   }
   .card button {
     font-size: 0.8em;
+  }
+  .selectedBag {
+    width: 100% !important;
   }
 }

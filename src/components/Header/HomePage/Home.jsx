@@ -4,6 +4,8 @@ import "../../ProductCard/ProductCard.css";
 import { Link } from "react-router-dom";
 import { BsList } from "react-icons/bs";
 import { BiMinus, BiPlus } from "react-icons/bi";
+import { AiOutlinePlus } from "react-icons/ai";
+import { HiShoppingBag } from "react-icons/hi";
 // import ProductCard from "../../ProductCard/ProductCard";
 
 const Home = () => {
@@ -11,6 +13,7 @@ const Home = () => {
   let itemName = "Item Name";
   const [add, setAdd] = useState(price);
   const [incm, setIncm] = useState(0);
+  const [menuBar, setMenuBar] = useState(false);
 
   const addItem = () => {
     setAdd(add + price);
@@ -29,9 +32,22 @@ const Home = () => {
     }
   };
   const decmItem = () => {
-    if (add > 1) {
+    if (add >= 1) {
       setIncm(incm - 1);
     }
+    if (incm === 0) {
+      setIncm(0);
+    }
+  };
+
+  const hideNav = () => {
+    setMenuBar(!menuBar);
+    document.querySelector(".navlinks").classList.toggle("activeNav");
+  };
+  const openBag = () => {
+    document
+      .querySelector(".selectedBag")
+      .classList.toggle("selectedBagActive");
   };
 
   const ProductCard = () => {
@@ -64,6 +80,7 @@ const Home = () => {
   const Cart = () => {
     return (
       <>
+        <HiShoppingBag className="bag-icon icon" onClick={openBag} />
         <section className="selectedBag">
           <div className="top-bagSide top-titles">
             <div>Bag</div>
@@ -113,9 +130,27 @@ const Home = () => {
     <>
       <div className="home">
         <section className="leftSidebar">
-          <div className="leftTop">
-            <BsList className="leftHumburg" />
+          <div className="leftTop" onClick={hideNav}>
+            {menuBar ? (
+              <AiOutlinePlus className="leftHumburg cross" />
+            ) : (
+              <BsList className="leftHumburg" />
+            )}
           </div>
+          <ul className="navlinks">
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/">About</Link>
+            </li>
+            <li>
+              <Link to="/">Category</Link>
+            </li>
+            <li>
+              <Link to="/">Products</Link>
+            </li>
+          </ul>
         </section>
         <section className="centerProduct">
           <div className="top-titles">All Products</div>

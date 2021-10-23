@@ -1,6 +1,6 @@
 import React from "react";
 import "./Header.css";
-import { BsSearch, BsList } from "react-icons/bs";
+import { BsSearch } from "react-icons/bs";
 import { HiShoppingBag } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
@@ -9,9 +9,6 @@ function Header() {
   return (
     <>
       <nav className="header">
-        <div className="rightHumburg">
-          <BsList />
-        </div>
         <div className="logo">
           <Link to="/">
             <div className="logo-name">
@@ -32,11 +29,11 @@ function Header() {
           </div>
         </div>
 
-        <div className="product-right">
+        {/* <div className="product-right">
           <Link to="/cart">
             <HiShoppingBag className="icon" />
           </Link>
-        </div>
+        </div> */}
       </nav>
     </>
   );
