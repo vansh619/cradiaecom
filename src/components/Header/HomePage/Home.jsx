@@ -4,6 +4,7 @@ import "../../ProductCard/ProductCard.css";
 import { Link } from "react-router-dom";
 import { BsList } from "react-icons/bs";
 import { BiMinus, BiPlus } from "react-icons/bi";
+import { AiOutlinePlus } from "react-icons/ai";
 // import ProductCard from "../../ProductCard/ProductCard";
 
 const Home = () => {
@@ -11,6 +12,7 @@ const Home = () => {
   let itemName = "Item Name";
   const [add, setAdd] = useState(price);
   const [incm, setIncm] = useState(0);
+  const [menuBar, setMenuBar] = useState(false);
 
   const addItem = () => {
     setAdd(add + price);
@@ -29,8 +31,11 @@ const Home = () => {
     }
   };
   const decmItem = () => {
-    if (add > 1) {
+    if (add >= 1) {
       setIncm(incm - 1);
+    }
+    if (incm === 0) {
+      setIncm(0);
     }
   };
 
@@ -109,18 +114,33 @@ const Home = () => {
     );
   };
 
+  const hideNav = () => {
+    setMenuBar(!menuBar);
+    document.querySelector(".navlinks").classList.toggle("activeNav");
+  };
+
   return (
     <>
       <div className="home">
         <section className="leftSidebar">
-          <div className="leftTop">
-            <BsList className="leftHumburg" />
+          <div className="leftTop" onClick={hideNav}>
+            {menuBar ? (
+              <AiOutlinePlus className="leftHumburg cross" />
+            ) : (
+              <BsList className="leftHumburg" />
+            )}
           </div>
+          <ul className="navlinks">
+            <li>Home</li>
+            <li>About</li>
+            <li>Category</li>
+            <li>Products</li>
+          </ul>
         </section>
         <section className="centerProduct">
           <div className="top-titles">All Products</div>
           <div className="products">
-            <ProductCard />
+            <ProductCard />-
             <ProductCard />
             <ProductCard />
             <ProductCard />
