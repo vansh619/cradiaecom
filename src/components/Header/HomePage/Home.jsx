@@ -139,16 +139,16 @@ const Home = () => {
           </div>
           <ul className="navlinks">
             <li>
-              <Link>Home</Link>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <Link>About</Link>
+              <Link to="/">About</Link>
             </li>
             <li>
-              <Link>Category</Link>
+              <Link to="/">Category</Link>
             </li>
             <li>
-              <Link>Products</Link>
+              <Link to="/">Products</Link>
             </li>
           </ul>
         </section>
