@@ -67,15 +67,8 @@
   .selectedBag {
     width: 36%;
   }
-  .leftSidebar {
-    position: absolute;
-    left: -100%;
-  }
 }
 @media screen and (max-width: 798px) {
-  .selectedBag {
-    display: none;
-  }
   .card button {
     top: 20px;
     left: -10px;

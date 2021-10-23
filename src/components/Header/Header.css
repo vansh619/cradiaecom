@@ -27,6 +27,7 @@
 .search-bar {
   display: flex;
   align-items: center;
+  margin-right: 1em;
 }
 .input {
   width: 300px;
@@ -100,6 +101,10 @@ ul {
 }
 .navlinks li {
   padding: 15px;
+  transition: 0.2s;
+}
+.navlinks li:hover {
+  background: #ffd960;
 }
 .cross {
   transform: rotate(45deg);

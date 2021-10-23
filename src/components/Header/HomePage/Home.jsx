@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { BsList } from "react-icons/bs";
 import { BiMinus, BiPlus } from "react-icons/bi";
 import { AiOutlinePlus } from "react-icons/ai";
+import { HiShoppingBag } from "react-icons/hi";
 // import ProductCard from "../../ProductCard/ProductCard";
 
 const Home = () => {
@@ -39,6 +40,16 @@ const Home = () => {
     }
   };
 
+  const hideNav = () => {
+    setMenuBar(!menuBar);
+    document.querySelector(".navlinks").classList.toggle("activeNav");
+  };
+  const openBag = () => {
+    document
+      .querySelector(".selectedBag")
+      .classList.toggle("selectedBagActive");
+  };
+
   const ProductCard = () => {
     return (
       <div className="card">
@@ -69,6 +80,7 @@ const Home = () => {
   const Cart = () => {
     return (
       <>
+        <HiShoppingBag className="bag-icon icon" onClick={openBag} />
         <section className="selectedBag">
           <div className="top-bagSide top-titles">
             <div>Bag</div>
@@ -114,11 +126,6 @@ const Home = () => {
     );
   };
 
-  const hideNav = () => {
-    setMenuBar(!menuBar);
-    document.querySelector(".navlinks").classList.toggle("activeNav");
-  };
-
   return (
     <>
       <div className="home">
@@ -131,16 +138,24 @@ const Home = () => {
             )}
           </div>
           <ul className="navlinks">
-            <li>Home</li>
-            <li>About</li>
-            <li>Category</li>
-            <li>Products</li>
+            <li>
+              <Link>Home</Link>
+            </li>
+            <li>
+              <Link>About</Link>
+            </li>
+            <li>
+              <Link>Category</Link>
+            </li>
+            <li>
+              <Link>Products</Link>
+            </li>
           </ul>
         </section>
         <section className="centerProduct">
           <div className="top-titles">All Products</div>
           <div className="products">
-            <ProductCard />-
+            <ProductCard />
             <ProductCard />
             <ProductCard />
             <ProductCard />
