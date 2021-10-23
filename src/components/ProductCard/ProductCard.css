@@ -81,16 +81,30 @@
     display: flex;
   }
   .card div h1 {
-    font-size: 1.2em;
+    font-size: 1em;
   }
   .card div .price {
-    font-size: 1.5em;
+    font-size: 1.2em;
   }
 }
 @media screen and (max-width: 450px) {
   .card button {
-    font-size: 0.8em;
-    height: 40px;
+    font-size: 0.7em;
+    height: 35px;
     top: 25px;
+    border-radius: 0.2em;
+  }
+  .card {
+    border-radius: 0.2em;
+  }
+  .card .productImage,
+  .card h1,
+  .card p {
+    margin: 0.2em;
+  }
+  .productImage {
+    height: 90px;
+    width: 90px;
+    border-radius: 8px;
   }
 }

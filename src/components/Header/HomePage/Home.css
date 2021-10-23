@@ -202,4 +202,7 @@
   .card button {
     font-size: 0.8em;
   }
+  .selectedBag {
+    width: 100% !important;
+  }
 }
