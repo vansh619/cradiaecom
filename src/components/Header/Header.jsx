@@ -1,16 +1,22 @@
 import React from "react";
 import "./Header.css";
-import { BsSearch } from "react-icons/bs";
-import { AiOutlineShoppingCart } from "react-icons/ai";
+import { BsSearch, BsList } from "react-icons/bs";
+import { HiShoppingBag } from "react-icons/hi";
 import { Link } from "react-router-dom";
+import logo from "../../assets/logo.png";
 
 function Header() {
   return (
     <>
       <nav className="header">
+        <div className="rightHumburg">
+          <BsList />
+        </div>
         <div className="logo">
           <Link to="/">
-            <div className="logo-name">MARK</div>
+            <div className="logo-name">
+              <img src={logo} alt="" />
+            </div>
           </Link>
         </div>
         <div className="search-bar">
@@ -25,9 +31,10 @@ function Header() {
             <BsSearch />
           </div>
         </div>
+
         <div className="product-right">
           <Link to="/cart">
-            <AiOutlineShoppingCart className="icon" />
+            <HiShoppingBag className="icon" />
           </Link>
         </div>
       </nav>

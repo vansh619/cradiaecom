@@ -2,26 +2,41 @@ import React, { useState } from "react";
 import "./Home.css";
 import "../../ProductCard/ProductCard.css";
 import { Link } from "react-router-dom";
+import { BsList } from "react-icons/bs";
+import { BiMinus, BiPlus } from "react-icons/bi";
 // import ProductCard from "../../ProductCard/ProductCard";
 
 const Home = () => {
   let price = 150;
   let itemName = "Item Name";
   const [add, setAdd] = useState(price);
+  const [incm, setIncm] = useState(0);
 
   const addItem = () => {
     setAdd(add + price);
+    setIncm(incm + 1);
     console.log(add);
   };
   const removeAll = () => {
-    if (add > !1) {
+    if (add > 1) {
       setAdd(0);
+      setIncm(0);
+    }
+  };
+  const incmItem = () => {
+    if (add > 1) {
+      setIncm(incm + 1);
+    }
+  };
+  const decmItem = () => {
+    if (add > 1) {
+      setIncm(incm - 1);
     }
   };
 
   const ProductCard = () => {
     return (
-      <div class="card">
+      <div className="card">
         <img
           src="https://images.unsplash.com/photo-1573246123716-6b1782bfc499?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8ZnJ1aXRzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
           alt="ProductImage"
@@ -35,6 +50,11 @@ const Home = () => {
           <p className="price">
             Rs.<span>{price}</span>
           </p>
+          {/* <div className="opretors">
+            <BiMinus onClick={decmItem} />
+            {incm}
+            <BiPlus onClick={incmItem} />
+          </div> */}
           <button onClick={addItem}>Add to Cart</button>
         </div>
       </div>
@@ -54,8 +74,15 @@ const Home = () => {
 
           <div className="cartItems">
             <div className="cartTop">
-              <p>Total Items</p>
-              <p>Total Price {add}</p>
+              <div className="addRemoveItems">
+                <p>Total Items</p>
+                <div className="opretors">
+                  <BiMinus onClick={decmItem} />
+                  {incm}
+                  <BiPlus onClick={incmItem} />
+                </div>
+              </div>
+              <p>Total Price {add * incm}</p>
             </div>
             <div className="deliveryCharge">
               <p>Delivery Charges</p> <span>Free</span>
@@ -65,7 +92,7 @@ const Home = () => {
                 <p>Grand Total</p>
                 <p>Inclusive of all taxes</p>
               </div>
-              <div>{add}</div>
+              <div>{add * incm}</div>
             </div>
 
             <div className="deliverytime">
@@ -86,12 +113,31 @@ const Home = () => {
     <>
       <div className="home">
         <section className="leftSidebar">
-          <div className="catogory top-titles">Products</div>
+          <div className="leftTop">
+            <BsList className="leftHumburg" />
+          </div>
         </section>
-
         <section className="centerProduct">
           <div className="top-titles">All Products</div>
           <div className="products">
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
             <ProductCard />
             <ProductCard />
             <ProductCard />

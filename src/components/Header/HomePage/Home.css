@@ -16,7 +16,7 @@
   margin: 0 10px;
 }
 .centerProduct {
-  width: 60%;
+  width: 70%;
   overflow-y: scroll;
   margin-bottom: 1.5rem;
 }
@@ -24,9 +24,7 @@
   width: 5px;
   color: #ffd960;
 }
-.leftSidebar {
-  width: 25%;
-}
+
 .selectedBag {
   width: 25%;
 }
@@ -41,8 +39,19 @@
   margin: 0.8em;
 }
 .leftSidebar {
-  border-right: 1px solid #ebe9ff;
+  /* border-right: 1px solid #ebe9ff; */
   height: 100%;
+  width: 50px;
+  margin: 0 1rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.leftTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0.6rem;
 }
 .selectedBag {
   border-left: 1px solid #ebe9ff;
@@ -100,13 +109,32 @@
 .cartTop {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
   margin: 0.5em 0;
   width: 100%;
   font-size: 1em;
   font-weight: 700;
-  height: 40px;
+  height: 60px;
   border-bottom: 1px solid #ebe9ff;
+  flex-direction: column;
+}
+.opretors {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3em;
+}
+.opretors svg {
+  margin: 5px;
+  background-color: #e9fcff;
+  height: 20px;
+  width: 20px;
+  border-radius: 5px;
+}
+.addRemoveItems {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 .cartMiddle {
   display: flex;
@@ -130,8 +158,30 @@
 .deliveryCharge span {
   color: #00a128;
 }
+
+.leftSidebarActive {
+  left: 100px;
+}
+@media screen and (min-width: 998px) {
+  .products {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 @media screen and (max-width: 998px) {
   .products {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 600px) {
+  .rightHumburg {
+    display: none;
+  }
+}
+@media screen and (max-width: 450px) {
+  .centerProduct {
+    width: 100%;
+  }
+  .card button {
+    font-size: 0.8em;
   }
 }

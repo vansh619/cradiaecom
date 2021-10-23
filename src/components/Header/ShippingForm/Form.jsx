@@ -10,45 +10,45 @@ const Form = () => {
       <div className="form">
         <div className="fields fields--2">
           <label className="field">
-            <span className="fieldLabel" for="firstname">
+            <span className="fieldLabel" htmlFor="firstname">
               First name
             </span>
             <input className="fieldInput" type="text" id="firstname" />
           </label>
           <label className="field">
-            <span className="fieldLabel" for="lastname">
+            <span className="fieldLabel" htmlFor="lastname">
               Last name
             </span>
             <input className="fieldInput" type="text" id="lastname" />
           </label>
         </div>
         <label className="field">
-          <span className="fieldLabel" for="address">
+          <span className="fieldLabel" htmlFor="address">
             Address
           </span>
           <input className="fieldInput" type="text" id="address" />
         </label>
         <label className="field">
-          <span className="fieldLabel" for="number">
+          <span className="fieldLabel" htmlFor="number">
             Mobile Number
           </span>
           <input className="fieldInput" type="number" id="number" />
         </label>
         <div className="fields fields--3">
           <label className="field">
-            <span className="fieldLabel" for="zipcode">
+            <span className="fieldLabel" htmlFor="zipcode">
               PIN code
             </span>
             <input className="fieldInput" type="text" id="pincode" />
           </label>
           <label className="field">
-            <span className="fieldLabel" for="city">
+            <span className="fieldLabel" htmlFor="city">
               City
             </span>
             <input className="fieldInput" type="text" id="city" />
           </label>
           <label className="field">
-            <span className="fieldLabel" for="state">
+            <span className="fieldLabel" htmlFor="state">
               State
             </span>
             <select className="fieldInput" id="state">
