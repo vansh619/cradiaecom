@@ -9,9 +9,9 @@ function Header() {
   return (
     <>
       <nav className="header">
-        <div className="rightHumburg">
+        {/* <div className="rightHumburg">
           <BsList />
-        </div>
+        </div> */}
         <div className="logo">
           <Link to="/">
             <div className="logo-name">

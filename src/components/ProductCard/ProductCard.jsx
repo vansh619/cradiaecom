@@ -9,11 +9,11 @@
 //         alt="ProductImage"
 //         className="productImage"
 //       />
-//       <h1>Allu Lelo..</h1>
+//       <h1>..</h1>
 //       <p className="price">
 //         Rs.<span>150</span>
 //       </p>
-//       <p>150 Rupey me dega</p>
+//       <p>150 </p>-
 //       <button>Add to Cart</button>
 //     </div>
 //   );
